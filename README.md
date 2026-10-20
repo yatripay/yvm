@@ -27,6 +27,21 @@ the last upstream release that supports Clique PoA.
    - **Chain ID:** `8934`
    - **Block explorer URL:** `https://yvmexplorer.yatripay.com`
 
+## Download Prebuilt Binary
+
+A prebuilt Linux (amd64) binary is available on the
+[Releases page](https://github.com/yatripay/yvm/releases/tag/v1).
+
+```shell
+wget https://github.com/yatripay/yvm/releases/download/v1/geth-linux-amd64-1.13.15-c5ba367e.tar.gz
+echo "cd0aa1e73bad4c2dcbaa225675a11556281d10e2bc25b8b1bd669da0670e33c2  geth-linux-amd64-1.13.15-c5ba367e.tar.gz" | sha256sum -c -
+tar -xzf geth-linux-amd64-1.13.15-c5ba367e.tar.gz
+sudo install -m 0755 geth-linux-amd64-1.13.15-c5ba367e/geth /usr/local/bin/geth
+geth version   # should report 1.13.15-stable
+```
+
+Only continue if the checksum line prints `OK`. For other platforms, build from source as described below.
+
 ## Building from Source
 
 Requirements: [Go](https://go.dev/dl/) 1.21 or later and a C compiler (e.g. `build-essential` on Debian/Ubuntu).
